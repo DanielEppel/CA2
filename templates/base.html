@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+	    .footer { font-weight: bold; color: white; background-color: black; }	    
+	    .midcol h1 { text-align: center; font-weight: bold; }
+	    .midcol h3 { text-align: center; color: steelblue; }
+	    .redtext { color:white; }
+	</style>
+	<title>Online Shop</title>
+    </head>
+    <body>
+	<nav class="navbar navbar-inverse">
+	    <div class="container-fluid">
+			<div class="navbar-header">
+		    	<a class="navbar-brand" href="#">Phonies Phone dealership</a>
+			</div>
+			<ul class="nav navbar-nav">
+				{% if request.user.is_authenticated %}
+            	<li>
+					<a href="{% url 'products' %}">Products</a>
+				</li>
+		    	<li>
+					<a href="{% url 'signout' %}">Sign Out<i class="fas fa-sign-out-alt"></i></a>
+				</li>
+				<li>
+					<a href="{% url 'signup' %}">Sign Up <i class="fas fa-user-plus"></i></a>
+				</li>
+				<li>
+					<a href="{% url 'signin' %}">Sign In <i class="fas fa-sign-in-alt"></i></a>
+				</li>
+				{% endif %}
+				{% if item_count > 0 %}
+				<li class="nav-item">
+			  		<a class="nav-link" href="{% url 'cart_detail' %}">
+				  	<span class="glyphicon glyphicon-shopping-cart"></span>({{item_count}})</a>
+				</li>
+				{% endif %}
+			</ul>
+	    </div>
+	</nav>
+
+	<div class="container-fluid">
+	    <div class="row">
+		<div class="col-sm-3">
+			<h2>Sale!</h2>
+			<h3>50% off everything!!!!!</h3>
+			<p>Due to a unpesidented stock overhaul everything is now 50% off. Get yours while stocks last. <span class="redtext">Sale must end november 20th </span>.
+			</div>
+			<div class="col-sm-6">
+				<div class="midcol">
+					{% block content %}
+					{% endblock content %}
+					</div>
+				</div>
+		</div>
+	<div class="col-sm-3">
+		<div class="well sidecol">
+			<h2>Events</h2>
+			<h3>Enter our sweep-stackes </h3>
+			<p>To enter our sweep-stackes all you have to do enter is come up with a fun abbreviation of the Website owners names and send it to -  phoniesphonedealer@gmail.com  All entrants must be 18 years or older if underage the entrant must be accompanied by an adult</p>
+			</div>	
+		</div>
+	    </div>
+	    <div class="row">
+		<div class="col-sm-12">
+		    <div class="well footer">
+			Website created by Daniel Eppel
+		    </div>
+		</div>
+	    </div>
+	</div>
+    </body>
+</html>

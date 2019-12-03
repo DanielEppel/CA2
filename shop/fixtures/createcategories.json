@@ -1,0 +1,44 @@
+[
+    {
+        "model": "shop.category",
+        "pk": 1,
+        "fields": {
+            "name": "Samsung"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 2,
+        "fields": {
+            "name": "Apple"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 3,
+        "fields": {
+            "name": "Huawie"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 4,
+        "fields": {
+            "name": "Nokia"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 5,
+        "fields": {
+            "name": "Sony"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 6,
+        "fields": {
+            "name": "HTC"
+        }
+    }
+]

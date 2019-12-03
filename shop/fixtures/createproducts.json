@@ -1,0 +1,112 @@
+[
+  {
+    "model": "shop.product",
+    "pk": 1,
+    "fields": {
+      "category_id": 1,
+      "name": "Samsung Phone",
+      "description": "Samsung Galaxy S9 64GB",
+      "stock": 5,
+      "price": 150.00
+      }
+  },
+  {
+      "model": "shop.product",
+      "pk": 2,
+      "fields": {
+        "category_id": 1,
+        "name": "Samsung Phone",
+        "description": "Samsung Galaxy A40 64GB",
+        "stock": 8,
+        "price": 259.00
+        }
+    },
+    {
+      "model": "shop.product",
+      "pk": 3,
+      "fields": {
+        "category_id": 2,
+        "name": "Apple Phone",
+        "description": "iPhone 11 64GB",
+        "stock": 20,
+        "price": 829.00
+        }
+    },
+    {
+      "model": "shop.product",
+      "pk": 4,
+      "fields": {
+        "category_id": 2,
+        "name": "Apple Phone",
+        "description": "iPhone XS 64GB",
+        "stock": 10,
+        "price": 1059.00
+        }
+    },
+    {
+      "model": "shop.product",
+      "pk": 5,
+      "fields": {
+        "category_id": 3,
+        "name": "Huawei Phone",
+        "description": "Huawie P30 PRO",
+        "stock": 9,
+        "price": 750.00
+        }
+    },
+    {
+      "model": "shop.product",
+      "pk": 6,
+      "fields": {
+        "category_id": 3,
+        "name": "Huawei Phone",
+        "description": "Huawei P30 LITE",
+        "stock": 6,
+        "price": 250.00
+        }
+    },
+    {
+      "model": "shop.product",
+      "pk": 7,
+      "fields": {
+        "category_id": 4,
+        "name": "Nokia Phone",
+        "description": "Nokia 8",
+        "stock": 5,
+        "price": 200.00
+        }
+    },
+    {
+      "model": "shop.product",
+      "pk": 8,
+      "fields": {
+        "category_id": 4,
+        "name": "Nokia Phone",
+        "description": "Nokia 9 PureView",
+        "stock": 2,
+        "price": 599.00
+        }
+    },
+    {
+      "model": "shop.product",
+      "pk": 9,
+      "fields": {
+        "category_id": 5,
+        "name": "Sony Phone",
+        "description": "Sony Xperia 5",
+        "stock": 2,
+        "price": 799.00
+        }
+    },
+    {
+      "model": "shop.product",
+      "pk": 10,
+      "fields": {
+        "category_id": 6,
+        "name": "HTC Phone",
+        "description": "HTC U12 life",
+        "stock": 4,
+        "price": 279.00
+        }
+    }
+]
