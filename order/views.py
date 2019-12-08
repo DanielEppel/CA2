@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 import stripe 
 
 @login_required()
-def order_create(request, total=0, cart_items = None):
+def order_create(request):
     if request.method == 'POST':
         cart = Cart.objects.get(cart_id=_cart_id(request))
         cart_items = CartItem.objects.fillter(cart=cart)

@@ -18,9 +18,9 @@ from django.urls import path, include
 from shop import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls), 
+    path('admin/', admin.site.urls),
+    path('cart/', include('cart.urls', namespace= 'cart')), 
     path('shop/', include('shop.urls')),
-    path('cart/', include('cart.urls')),
     path('order/', include('order.urls')),
     path('account/create/', views.signupView, name='signup'),
     path('account/login/', views.signinView, name='signin'),

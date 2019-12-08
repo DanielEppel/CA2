@@ -1,22 +1,22 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category, Product
-from django.db.models import Count
+from cart.forms import CartAddProductForm
 from django.contrib.auth.models import Group, User
 from .forms import SignUpForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 
-def product_list(request, category_id=None):
-    category = None
-    products = Product.objects.all()
-    ccat = Category.objects.annotate(num_products=Count('products'))
-    if(category_id):
-        category = get_object_or_404(Category, id=category_id)
-        products = products.filter(category=category)
+def product_list(request, id, slug):
+    products =  get_object_or_404 (Product,
+                                    id = id,
+                                    slug = slug,
+                                    available =True)
+    cart_product_form = CartAddProductForm()
+   
 
     return render(request, 'products.html',
                     {'products': products,
-                    'countcat':ccat})
+                    'cart_product_form':cart_product_form})
 
 def signupView(request):
     if request.method == 'POST':
