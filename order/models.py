@@ -1,5 +1,7 @@
 from django.db import models
 from shop.models import Product
+from django.core.validators import MinValueValidator, MaxValueValidator
+from vouchers.models import Vouchers
 
 class Order(models.Model):
     first_name = models.CharField(max_length=50)
