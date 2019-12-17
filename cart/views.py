@@ -8,9 +8,9 @@ from django.conf import settings
 import stripe
 # Create your views here.
 @require_POST
-def add_cart(request, product_id):
+def cart_add(request, product_id):
 	cart = Cart(request)
-	product = Product.objects.get(Product, id=product_id)
+	product = get_object_or_404(Product, id=product_id)
 	form = CartAddProductForm(request_POST)
 	if forms.is_valid():
 		cd = form.cleaned_data
@@ -34,8 +34,8 @@ def cart_detail(request):
 	stripe_total = int(total*100)
 	description = 'online Shop - New Order'
 	data_key = settings.STRIPE_PUBLISHABLE_KEY
-	return render(request, 'cart/cart_detail.html',{'cart':cart},
-					'voucher_apply_form': voucher_apply_form,
+	return render(request, 'cart/cart_detail.html',{'cart':cart, 
+					'voucher_apply_form': voucher_apply_form},
 					 dict(data_key = data_key, stripe_total = stripe_total, description = description))
 					
 def cart_remove(request, product_id):

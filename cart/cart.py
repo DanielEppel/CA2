@@ -1,6 +1,6 @@
 from decimal import Decimal
 from django.conf import settings
-from shop.models import product
+from shop.models import Product
 from vouchers.models import Voucher
 
 class cart(object):
@@ -9,11 +9,13 @@ class cart(object):
         Initialize the cart
         """
         self.session = request.session
-        cart = self.session.get(settings.CART_SESSION_ID) = {}
+        cart = self.session.get(settings.CART_SESSION_ID)
         
         if not cart:
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
+
+        self.voucher_id = self.session.get('voucher_id')
 
     def add(self, quality=1, update_quality=False):
         """
@@ -75,14 +77,9 @@ class cart(object):
 
 
 
-
-__init__()
-    self.voucher_id = self.session.get('voucher_id')
-
-
     @property
     def voucher(self):
-        if self.voucher_id
+        if self.voucher_id:
             return Voucher.objects.get(id=self.voucher_id)
         return None
 

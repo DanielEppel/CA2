@@ -36,7 +36,7 @@ def order_create(request):
         order_details = Order.objects.create(emailAddress = email)
         order_details.save()
     else:
-        pass form = OrderCreateForm()
+        form = OrderCreateForm()
     return render(request,
                     'order/create.htlm',
                     {'cart':cart, 'form':form})
